@@ -1,0 +1,21 @@
+<div class="jumbotron text-center">
+  <h3>Earth Observatory Depot Network</h3>
+
+  <p>Powered by GENI-IDMS and Periscope</p>
+  
+  <div ng-style="{'padding': '20px'}"/>
+  
+  <div class="container-fluid" style="max-width: 800px;">
+    <div ng-controller="avController" class="row" style="padding: 20px;">
+      <av-element type="dcount"></av-element>
+      <div class="col-xs-2"/>
+      <av-element type="dnet"></av-element>
+    </div>
+    <div ng-controller="avController" class="row" style="padding: 20px;">
+      <av-element type="dused"></av-element>
+      <div class="col-xs-2"/>
+      <av-element type="dfree"></av-element>
+    </div>
+  </div>
+</div>
+

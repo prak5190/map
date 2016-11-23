@@ -1,0 +1,63 @@
+<h2 class="lead text-center">
+    <div>{{ depotInstitutionName}} ({{dialogButtonName}})</div>
+<!--    <div>{{ eventType }} </div>    -->
+</h2>
+<!---This visibility trick is not great. 
+It is required because the angular bindings for nvd3 do
+not support functions setting axis label based on a function
+
+A better long-term option is probably to scrap nvd3 and use vanilla d3
+--!>
+<div id="CHART-Time-GB" style="display: none">
+  <nvd3-line-chart
+    data="graphData"
+    width="500"
+    height="300"
+    margin="{left:80,top:10,bottom:0,right:0}"
+    showXAxis="true"
+    showYAxis="true"
+    tooltips="true"
+    noData="No Data for this Event Type"
+    xAxisTickFormat="xAxisTickFormat_Date_Format()"
+    yAxisTickFormat="yAxisFormatFunction()"
+    xAxisLabel="Time"
+    yAxisLabel="Gigabytes"
+    interactive="true">
+  </nvd3-line-chart>
+</div>
+
+<div id="CHART-Time-Rate" style="display: none">
+  <nvd3-line-chart
+    data="graphData"
+    width="500"
+    height="300"
+    margin="{left:80,top:10,bottom:0,right:0}"
+    showXAxis="true"
+    showYAxis="true"
+    tooltips="true"
+    noData="No Data for this Event Type"
+    xAxisTickFormat="xAxisTickFormat_Date_Format()"
+    yAxisTickFormat="yAxisFormatFunction()"
+    xAxisLabel="Time"
+    yAxisLabel="{{ yAxisLabel }}"
+    interactive="true">
+  </nvd3-line-chart>
+</div>
+
+<div id="CHART-Time-Percent" style="display: none">
+  <nvd3-line-chart
+    data="graphData"
+    width="500"
+    height="300"
+    margin="{left:80,top:10,bottom:0,right:0}"
+    showXAxis="true"
+    showYAxis="true"
+    tooltips="true"
+    noData="No Data for this Event Type"
+    xAxisTickFormat="xAxisTickFormat_Date_Format()"
+    yAxisTickFormat="yAxisFormatFunction()"
+    xAxisLabel="Time"
+    yAxisLabel="Percent"
+    interactive="true">
+  </nvd3-line-chart>
+</div>
